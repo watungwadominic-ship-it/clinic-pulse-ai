@@ -170,23 +170,23 @@ const SuccessModal = ({ isOpen, onClose, clinicName }: { isOpen: boolean, onClos
           <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={40} />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4">Roadmap Generated!</h3>
+          <h3 className="text-3xl font-bold text-white mb-4">You're All Set!</h3>
           <p className="text-slate-400 mb-8 leading-relaxed">
-            Congratulations <span className="text-white font-bold">{clinicName}</span>. Your personalized clinic recovery strategy is now ready. We've matched you with the #1 AI Dental Assistant.
+            Thank you, <span className="text-white font-bold">{clinicName}</span>. Your custom AI Roadmap is being finalized. In the meantime, don't miss this opportunity to accelerate your results.
           </p>
           <a 
             href="https://anollamedical.com/?ref=clinicpulse" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="chrome-button w-full py-4 rounded-xl flex items-center justify-center gap-2"
+            className="chrome-button w-full py-5 rounded-xl flex items-center justify-center gap-3 text-sm font-bold shadow-[0_0_30px_rgba(255,255,255,0.15)]"
           >
-            Access My Recommended Tool <ArrowRight size={18} />
+            FAST-TRACK YOUR RECOVERY: BOOK A DEMO WITH OUR AI PARTNER <ArrowRight size={18} />
           </a>
           <button 
             onClick={onClose}
-            className="mt-6 text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors"
+            className="mt-8 text-slate-500 hover:text-white text-[10px] font-bold uppercase tracking-[0.2em] transition-colors"
           >
-            Close Window
+            I'll wait for my email • Continue Exploring
           </button>
         </motion.div>
       </div>
@@ -208,9 +208,14 @@ const Footer = () => (
         <p className="text-slate-600 text-xs font-medium uppercase tracking-[0.3em]">
           © 2026 ClinicPulse AI. All rights reserved.
         </p>
-        <p className="max-w-2xl text-[10px] text-slate-700 leading-relaxed uppercase tracking-wider">
-          Disclaimer: This tool is for informational purposes only and does not constitute medical or financial advice.
-        </p>
+        <div className="max-w-2xl space-y-2">
+          <p className="text-[9px] text-slate-600 leading-relaxed uppercase tracking-widest border-b border-white/5 pb-2">
+            Affiliate Disclaimer: Some links on this site are affiliate links, and we may earn a commission at no cost to you.
+          </p>
+          <p className="text-[10px] text-slate-700 leading-relaxed uppercase tracking-wider">
+            Disclaimer: This tool is for informational purposes only and does not constitute medical or financial advice.
+          </p>
+        </div>
       </div>
     </div>
   </footer>
@@ -284,14 +289,27 @@ const ArticlePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative py-20 px-6">
+    <div className="min-h-screen relative flex flex-col py-12 px-6">
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
+      
+      <header className="flex flex-col items-center text-center mb-16 space-y-6">
+        <Link to="/">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 glass px-6 py-2 rounded-full mb-4"
+          >
+            <img src="/logo.svg" alt="ClinicPulse AI Logo" className="w-6 h-6 object-contain" />
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">ClinicPulse AI</span>
+          </motion.div>
+        </Link>
+      </header>
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl mx-auto"
+        className="max-w-3xl mx-auto w-full"
       >
         <button 
           onClick={() => navigate("/")}
@@ -342,9 +360,21 @@ const ArticlePage = () => {
 const PrivacyPolicyPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
-    <div className="min-h-screen relative pt-20 px-6 flex flex-col">
+    <div className="min-h-screen relative flex flex-col pt-12 px-6">
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
+      <header className="flex flex-col items-center text-center mb-16 space-y-6">
+        <Link to="/">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 glass px-6 py-2 rounded-full mb-4"
+          >
+            <img src="/logo.svg" alt="ClinicPulse AI Logo" className="w-6 h-6 object-contain" />
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">ClinicPulse AI</span>
+          </motion.div>
+        </Link>
+      </header>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto mb-20 w-full">
         <Link to="/" className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-12 text-sm font-bold uppercase tracking-widest">
           <ArrowLeft size={16} /> Back to Home
@@ -366,9 +396,21 @@ const PrivacyPolicyPage = () => {
 const TermsOfServicePage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
-    <div className="min-h-screen relative pt-20 px-6 flex flex-col">
+    <div className="min-h-screen relative flex flex-col pt-12 px-6">
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
+      <header className="flex flex-col items-center text-center mb-16 space-y-6">
+        <Link to="/">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 glass px-6 py-2 rounded-full mb-4"
+          >
+            <img src="/logo.svg" alt="ClinicPulse AI Logo" className="w-6 h-6 object-contain" />
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">ClinicPulse AI</span>
+          </motion.div>
+        </Link>
+      </header>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto mb-20 w-full">
         <Link to="/" className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-12 text-sm font-bold uppercase tracking-widest">
           <ArrowLeft size={16} /> Back to Home
@@ -390,9 +432,21 @@ const TermsOfServicePage = () => {
 const ContactPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
-    <div className="min-h-screen relative pt-20 px-6 flex flex-col">
+    <div className="min-h-screen relative flex flex-col pt-12 px-6">
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
+      <header className="flex flex-col items-center text-center mb-16 space-y-6">
+        <Link to="/">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 glass px-6 py-2 rounded-full mb-4"
+          >
+            <img src="/logo.svg" alt="ClinicPulse AI Logo" className="w-6 h-6 object-contain" />
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">ClinicPulse AI</span>
+          </motion.div>
+        </Link>
+      </header>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto mb-20 w-full">
         <Link to="/" className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-12 text-sm font-bold uppercase tracking-widest">
           <ArrowLeft size={16} /> Back to Home
@@ -489,6 +543,7 @@ const CalculatorView = () => {
 
       if (response.ok) {
         setFormStatus('success');
+        setIsModalOpen(true);
       } else {
         setFormStatus('idle');
         alert("Something went wrong. Please try again.");
@@ -526,7 +581,7 @@ const CalculatorView = () => {
               animate={{ opacity: 1, y: 0 }}
               className="flex items-center gap-3 glass px-6 py-2 rounded-full mb-4"
             >
-              <Stethoscope className="text-white" size={20} />
+              <img src="/logo.svg" alt="ClinicPulse AI Logo" className="w-6 h-6 object-contain" />
               <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">ClinicPulse AI</span>
             </motion.div>
           </Link>
