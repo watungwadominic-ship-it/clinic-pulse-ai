@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ais-pre-r6h7pwltp3b7abrdphhb5h-10310046101.europe-west2.run.app/sitemap.xml
+Sitemap: https://clinic-pulse-ai.vercel.app/sitemap.xml
