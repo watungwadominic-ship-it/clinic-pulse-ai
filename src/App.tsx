@@ -34,6 +34,12 @@ import {
   Share2
 } from 'lucide-react';
 
+// --- Custom SEO & Interactive Diagnostic Component Imports ---
+import SEOMetadata from './components/SEOMetadata';
+import FAQSection, { getFAQSchema } from './components/FAQSection';
+import WorkflowAudit from './components/WorkflowAudit';
+import ActionPlan from './components/ActionPlan';
+
 // --- Components ---
 
 const CountUp = ({ value, prefix = "", suffix = "" }: { value: number, prefix?: string, suffix?: string }) => {
@@ -288,8 +294,35 @@ const ArticlePage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "description": `Detailed clinical analysis: "${article.title}". Learn how AI-driven operational updates recover lost practitioner revenue.`,
+    "datePublished": "2026-05-15T08:00:00+00:00",
+    "dateModified": "2026-06-02T19:44:23Z",
+    "author": {
+      "@type": "Organization",
+      "name": "ClinicPulse AI"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ClinicPulse AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://clinic-pulse-ai.vercel.app/logo.svg"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen relative flex flex-col py-12 px-6">
+      <SEOMetadata 
+        title={`${article.title} | ClinicPulse AI Analysis`}
+        description={`Clinical Analysis: ${article.title}. Examine direct operational metrics, revenue recovery plans, and vetted software pathways.`}
+        type="article"
+        schema={articleSchema}
+      />
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
       
@@ -361,6 +394,10 @@ const PrivacyPolicyPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
     <div className="min-h-screen relative flex flex-col pt-12 px-6">
+      <SEOMetadata 
+        title="Privacy Policy | ClinicPulse AI"
+        description="Learn how ClinicPulse AI handles and secures your healthcare practice metrics and information with absolute medical-grade zero-knowledge encryption."
+      />
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
       <header className="flex flex-col items-center text-center mb-16 space-y-6">
@@ -397,6 +434,10 @@ const TermsOfServicePage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
     <div className="min-h-screen relative flex flex-col pt-12 px-6">
+      <SEOMetadata 
+        title="Terms of Service | ClinicPulse AI"
+        description="Read the terms and operating guidelines for utilizing the ClinicPulse AI calculator for operational practice auditing."
+      />
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
       <header className="flex flex-col items-center text-center mb-16 space-y-6">
@@ -433,6 +474,10 @@ const ContactPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
     <div className="min-h-screen relative flex flex-col pt-12 px-6">
+      <SEOMetadata 
+        title="Contact Us | ClinicPulse AI Partnerships"
+        description="Get in touch with ClinicPulse AI. Optimize your dental or medical clinic workflows and establish high-value HIPAA-compliant AI integrations."
+      />
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
       <header className="flex flex-col items-center text-center mb-16 space-y-6">
@@ -562,8 +607,32 @@ const CalculatorView = () => {
     });
   };
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "ClinicPulse AI ROI Estimator",
+        "operatingSystem": "All",
+        "applicationCategory": "BusinessApplication",
+        "description": "Calculate how modern AI scheduling and automation recovers thousands in lost appointments and administrative overhead for dental, GP, and medical clinics.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      getFAQSchema()
+    ]
+  };
+
   return (
     <div className="min-h-screen relative selection:bg-white/20">
+      <SEOMetadata 
+        title="ClinicPulse AI - Medical & Dental ROI Revenue Leak Calculator"
+        description="Free 2026 ROI Calculator for private medical, dental, and physio practices to detect revenue leakage from no-shows and manual admin work, and recover lost profit with AI partners."
+        schema={homeSchema}
+      />
       {/* Background Mesh Gradient */}
       <div className="fixed inset-0 -z-10 animate-mesh opacity-50" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
@@ -763,6 +832,12 @@ const CalculatorView = () => {
           </motion.div>
         </div>
 
+        {/* Dynamic Action Plan Breakdown based on metrics */}
+        <ActionPlan noShows={noShows} revPerAppt={revPerAppt} staffHours={staffHours} stats={stats} />
+
+        {/* Dynamic Workflow Vulnerability Index checklist */}
+        <WorkflowAudit />
+
         {/* Blog / Resources Section */}
         <section className="mt-32 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -801,6 +876,9 @@ const CalculatorView = () => {
           </div>
         </section>
 
+        {/* Dynamic Interactive FAQ Accordion Section for Google SEO crawling and User support */}
+        <FAQSection />
+
         {/* Partners & Lead Capture Section */}
         <section className="mt-32 grid lg:grid-cols-2 gap-12 items-center">
           {/* Partners Column */}
@@ -833,7 +911,7 @@ const CalculatorView = () => {
           </div>
 
           {/* Lead Capture Form */}
-          <div ref={scrollRef} className="glass-card p-10 md:p-12 space-y-8 relative overflow-hidden min-h-[500px] flex flex-col justify-center">
+          <div ref={scrollRef} id="roadmap-anchor" className="glass-card p-10 md:p-12 space-y-8 relative overflow-hidden min-h-[500px] flex flex-col justify-center">
             <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
             
             <AnimatePresence mode="wait">
@@ -972,7 +1050,10 @@ const CalculatorView = () => {
               Our AI Audit identifies exactly where your automation gaps are. Get the full report on how to eliminate no-shows forever.
             </p>
             
-            <button className="chrome-button px-10 py-5 rounded-full flex items-center gap-3 mx-auto whitespace-nowrap">
+            <button 
+              onClick={() => document.getElementById('roadmap-anchor')?.scrollIntoView({ behavior: 'smooth' })}
+              className="chrome-button px-10 py-5 rounded-full flex items-center gap-3 mx-auto whitespace-nowrap cursor-pointer"
+            >
               <span>GET A FULL AI AUDIT</span>
               <ArrowRight size={20} />
             </button>
