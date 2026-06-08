@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-interface AdSenseUnitProps {
+interface AdUnitProps {
   /**
    * Google AdSense Slot ID. (e.g. "1234567890")
    * If not provided, it default to a generic setup or a friendly notice in development.
@@ -24,13 +24,13 @@ interface AdSenseUnitProps {
   label?: string;
 }
 
-export default function AdSenseUnit({
+export default function AdUnit({
   slot = "1868855717",
   format = 'auto',
   responsive = 'true',
   style,
   label = "Sponsored Advertisement"
-}: AdSenseUnitProps) {
+}: AdUnitProps) {
   const [hasAdBlocker, setHasAdBlocker] = useState(false);
   const isDev = process.env.NODE_ENV !== 'production' || window.location.hostname === 'localhost';
   const client = "ca-pub-2111166324364557"; // Saved from index.html
