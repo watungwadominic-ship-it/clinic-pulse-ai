@@ -39,6 +39,7 @@ import SEOMetadata from './components/SEOMetadata';
 import FAQSection, { getFAQSchema } from './components/FAQSection';
 import WorkflowAudit from './components/WorkflowAudit';
 import ActionPlan from './components/ActionPlan';
+import AdSenseUnit from './components/AdSenseUnit';
 
 // --- Components ---
 
@@ -366,6 +367,8 @@ const ArticlePage = () => {
             {article.content}
             <p>Our 2026 analysis suggests that clinics delaying the adoption of these technologies are currently leaking at least 15% of their gross potential revenue. The path to recovery starts with a clear understanding of your current metrics and a strategic blueprint for integration.</p>
           </div>
+
+          <AdSenseUnit format="auto" label="Advertisement - Healthcare Tech Insights" />
 
           <div className="pt-12 border-t border-white/5 space-y-8">
             <div className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 text-center space-y-8">
@@ -875,6 +878,9 @@ const CalculatorView = () => {
             />
           </div>
         </section>
+
+        {/* Dynamic Responsive Google AdSense Unit */}
+        <AdSenseUnit format="auto" label="Sponsored - Strategic Clinic Operations" />
 
         {/* Dynamic Interactive FAQ Accordion Section for Google SEO crawling and User support */}
         <FAQSection />
