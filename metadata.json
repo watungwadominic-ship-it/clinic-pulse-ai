@@ -2,5 +2,5 @@
   "name": "ClinicPulse AI",
   "description": "Professional ROI tool for private dental and medical clinics to calculate revenue leakage from no-shows and manual tasks, highlighting AI recovery potential.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
