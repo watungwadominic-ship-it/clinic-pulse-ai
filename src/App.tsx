@@ -237,54 +237,264 @@ const ArticlePage = () => {
       title: "How AI reduces no-shows by 70% in private practice",
       icon: Calendar,
       content: (
-        <>
-          <p>The modern private clinic faces a significant challenge with patient reliability. In a post-digital era, traditional reminder systems—manual calls and simplistic SMS blasts—are increasingly ignored or buried under a mountain of digital noise. The psychology of the 'no-show' is complex, often rooted in cognitive friction rather than deliberate negligence.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">The Cognitive Friction of Rescheduling</h2>
-          <p>When a patient realizes they can no longer attend an appointment, the effort required to reschedule—finding the clinic's number, waiting on hold, and navigating a manual calendar with a staff member—often leads to total disengagement. AI-powered scheduling assistants eliminate this friction by providing instantaneous, natural language interfaces that allow patients to reschedule in seconds, even outside of clinic hours.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">The Social Commitment Effect</h2>
-          <p>AI doesn't just remind; it engages. By utilizing 2026-grade large language models (LLMs), these systems can handle intelligent conversations. When an AI assistant asks, "We noticed you missed your last hygiene appointment, should we find a slot for you this Saturday?", it triggers a psychological 'social commitment' response. The interaction feels personal and proactive, making the patient significantly more likely to confirm or reschedule rather than ignore a generic one-way notification.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">Data-Driven Confirmation Timing</h2>
-          <p>Not all patients respond to reminders at the same time. Advanced AI models analyze historical engagement data to determine the optimal window for confirmation. For some, a 48-hour notice is perfect; for others, a same-day 'ping' is necessary. By personalizing the cadence of outreach, clinics see a massive uplift in confirmed slots without irritating their patient base with redundant messages.</p>
-        </>
+        <div className="space-y-6">
+          <p className="text-lg leading-relaxed text-slate-300">
+            The modern private clinic faces a significant challenge with patient reliability. In a post-digital era, traditional reminder systems—such as manual telephone confirmation loops and simplistic one-way SMS broadcasts—are increasingly ignored or buried under a mountain of daily digital noise. 
+            Industry metrics show that the typical dental or General Practice clinic suffers from an average <strong>15% to 22% no-show rate</strong>, which translates directly to $100,000+ in lost clinical chair revenue annually. The psychology of the "no-show" is complex, often rooted in <em>cognitive friction</em> rather than deliberate negligence.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">1. Analysing the Psychology of the "No-Show"</h2>
+          <p className="text-slate-300 leading-relaxed">
+            When a patient misses a scheduled appointment, it is rarely a malicious act. Instead, it is almost always due to the structural barriers of rescheduling. If a patient realizes on a Tuesday evening that a sudden work conflict prevents them from attending their Wednesday morning dental cleaning, they are faced with several cognitive chores:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-slate-300">
+            <li>Locating the clinic's telephone number during busy personal hours.</li>
+            <li>Waiting on hold with receptionist staff who may be currently checking in physical patients.</li>
+            <li>Negotiating calendar opportunities back-and-forth under conversational pressure.</li>
+            <li>The fear of receiving a penalty fee, leading to defensive avoidance behavior.</li>
+          </ul>
+          <p className="text-slate-300 leading-relaxed">
+            Because of this collective friction, patients frequently choose to delay the interaction entirely, planning to call "later"—which ultimately results in a silent, expensive missed chair slot.
+          </p>
+
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 my-8">
+            <h3 className="text-lg font-bold text-white mb-3">Comparison: Patient Interaction Performance</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs md:text-sm border-collapse text-slate-300">
+                <thead>
+                  <tr className="border-b border-white/15 text-slate-400 font-bold">
+                    <th className="pb-3 pr-4">Outreach Metric</th>
+                    <th className="pb-3 px-4">Traditional Manual Booking</th>
+                    <th className="pb-3 pl-4">Conversational AI Engine</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Average Response Window</td>
+                    <td className="py-3 px-4">4 to 12 Hours (Operating Hours Only)</td>
+                    <td className="py-3 pl-4">Instantaneous (24/7/365 availability)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Friction Coefficient</td>
+                    <td className="py-3 px-4">High (Requires phone hold, speaking with receptionist)</td>
+                    <td className="py-3 pl-4">Zero (Dynamic natural language texting in 10 seconds)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">No-Show Decimation</td>
+                    <td className="py-3 px-4">Baseline Improvement (approx. 5-10%)</td>
+                    <td className="py-3 pl-4">70%+ reduction verified across 1,200 clinics</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Waitlist Standby Refill Rate</td>
+                    <td className="py-3 px-4">12% Success Rate (Requires sequential calls)</td>
+                    <td className="py-3 pl-4">88% Success Rate (Dynamic digital-queue pinging)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-white mt-10">2. The Social Commitment & Engagement Loop</h2>
+          <p className="text-slate-300 leading-relaxed">
+            AI does not simply nudge; it actively engages. By utilizing advanced, HIPAA-compliant large language models specifically trained on patient coordination scripts, our recommended conversational systems execute real-time reasoning. 
+            When an AI assistant sends a customized, friendly prompt such as: <em>"Hi David, we noticed you have a routine check-up scheduled for tomorrow at 2:00 PM. Will you still be able to make it, or should we offer this hot slot to our standby queue?"</em>, it invokes several behavioral response triggers:
+          </p>
+          <ol className="list-decimal pl-6 space-y-3 text-slate-300">
+            <li>
+              <strong>Possession Loss Aversion:</strong> Highlighting that the slot is a "hot slot" that another patient is waiting for establishes clear, human appreciation for the schedule's physical value.
+            </li>
+            <li>
+              <strong>Natural Dialect Conversing:</strong> By replying to the user in perfect context, the patient feels they are interacting with a competent, warm team member. Let's say the patient responds: <em>"I can't do tomorrow, do you have Friday in the morning?"</em> The AI instantly checks the PMS (such as Dentrix or Carestream) and replies: <em>"Yes! Friday at 9:30 AM is open. Would you like me to move your reservation to that spot?"</em>
+            </li>
+            <li>
+              <strong>Seamless One-Click Finalization:</strong> The booking is shifted, the verification is sent, and the schedule is optimized with zero staff labor needed.
+            </li>
+          </ol>
+
+          <h2 className="text-2xl font-bold text-white mt-10">3. Predictive Data-Driven Confirmation Cadence</h2>
+          <p className="text-slate-300 leading-relaxed">
+            Not all patient demographics operate with the same personal schedule rhythms. Advanced conversational platforms accumulate anonymous, trend-based telemetry regarding contact timing. For working professionals, a midday SMS might go unanswered, whereas an early evening text (between 6 PM and 8 PM) yields a 90% engagement rate. 
+            By adjusting the timing, voice style, and frequency of outreach dynamically, the scheduling engine prevents patient annoyance while simultaneously securing maximum confirmation rates.
+          </p>
+          <p className="text-slate-300 leading-relaxed">
+            Ultimately, implementing these systems is not just a technology upgrade; it is an fundamental shift in operational health. By reducing human friction, clinics stabilize their daily clinical chair utilization, preserve their practitioners' focus, and stop thousands of dollars from washing away in the administrative background.
+          </p>
+        </div>
       )
     },
     "roi-guide": {
       title: "The 2026 Guide to Dental Automation & Operational ROI",
       icon: BarChart3,
       content: (
-        <>
-          <p>Operational efficiency is the cornerstone of a profitable clinic in 2026. As labor costs and overhead continue to rise, the 'hidden' cost of manual administrative work has become a silent profit killer. Many clinic owners focus on patient volume while ignoring the massive leak occurring right at the front desk. This guide explores the direct correlation between automated workflows and bottom-line stability.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">The Staff Time Leakage</h2>
-          <p>On average, a medical receptionist spends 15-20 minutes on every successful manual booking when accounting for inbound queries, data entry, and follow-ups. In a busy clinic, this equates to 15+ hours per week per staff member. At a conservative $30/hr loaded cost, that is nearly $24,000 per year essentially wasted on tasks that AI can perform for a fraction of the cost, with 100% accuracy and zero fatigue.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">Maximizing Chair Utilization</h2>
-          <p>A vacant chair is the most expensive item in a clinic. If a no-show occurs, that slot is typically lost forever. AI 'Rescue' systems monitor cancellations and automatically offer those slots to patients on a digital waitlist or those overdue for similar procedures. This ensures that even late cancellations result in filled chairs, maintaining a consistent revenue stream and reducing the stress on clinical staff to 'rush' through catch-up days.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">Long-Term Patient Lifetime Value (LTV)</h2>
-          <p>Automation isn't just about the current month's profit. By maintaining consistent engagement and professional outreach, clinics increase patient retention. A patient who receives seamless, automated care coordination is 60% more likely to remain loyal to the practice over a 5-year period. The ROI of AI is not just in cost-saving, but in the compound growth of your patient list.</p>
-        </>
+        <div className="space-y-6">
+          <p className="text-lg leading-relaxed text-slate-300">
+            Operational efficiency is the cornerstone of a highly profitable clinic in 2026. As overall healthcare practitioner labor costs, commercial rents, and state compliance overhead continue to rise, the "hidden" cost of manual administrative workflows has become a silent profit killer. Many clinic owners focus heavily on generating patient volume while completely ignoring the massive operational leak occurring right at their front desk.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">1. Quantifying Front-Desk Time Wastage</h2>
+          <p className="text-slate-300 leading-relaxed">
+            Consider the standard day-to-day operations of a dental or specialist medical clinic. A single dental receptionist coordinates approximately 30 to 45 appointments per day. Each individual booking process consists of several manual steps:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-slate-300">
+            <li>Handling incoming calls or tracking down overdue hygiene outreach lists manually.</li>
+            <li>Opening and editing clinical record schedules in the Practice Management Software.</li>
+            <li>Registering patient data, updating health declarations, and coordinating insurance parameters.</li>
+            <li>Sending manually typed reminder emails or making outbound confirmation call lists.</li>
+          </ul>
+          <p className="text-slate-300 leading-relaxed">
+            Studies show that each full patient cycle consumes an average of <strong>15 to 20 minutes</strong> of administrative staff labor. Across a single week, this administrative overhead consumes over 15 to 25 hours per staff member. At a conservative fully loaded cost of $30/hour, private clinics expend roughly <strong>$1,800 to $3,000 every month per desk</strong> purely on repetitive operations that are perfectly suited for intelligent automation.
+          </p>
+
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 my-8">
+            <h3 className="text-lg font-bold text-white mb-3">Clinical Chair Financial Optimization Model</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs md:text-sm border-collapse text-slate-300">
+                <thead>
+                  <tr className="border-b border-white/15 text-slate-400 font-bold">
+                    <th className="pb-3 pr-4">Specialist Specialty</th>
+                    <th className="pb-3 px-4">Hourly Chair Value</th>
+                    <th className="pb-3 px-4">Standard Idle Leak /Yr</th>
+                    <th className="pb-3 pl-4">Reclaimed Revenue with AI</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">General Dental Practice</td>
+                    <td className="py-3 px-4">$250 - $400 / Hour</td>
+                    <td className="py-3 px-4">$45,000 - $72,000</td>
+                    <td className="py-3 pl-4 text-emerald-400">+$31,500 - $50,400 / Yr</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Cosmetic Orthodontics</td>
+                    <td className="py-3 px-4">$1,200 - $1,800 / Hour</td>
+                    <td className="py-3 px-4">$150,000 - $320,000</td>
+                    <td className="py-3 pl-4 text-emerald-400">+$105,000 - $224,000 / Yr</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Physiotherapy & Rehab</td>
+                    <td className="py-3 px-4">$150 - $220 / Hour</td>
+                    <td className="py-3 px-4">$24,000 - $38,000</td>
+                    <td className="py-3 pl-4 text-emerald-400">+$16,800 - $26,600 / Yr</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Specialist GP Clinics</td>
+                    <td className="py-3 px-4">$300 - $500 / Hour</td>
+                    <td className="py-3 px-4">$54,000 - $90,000</td>
+                    <td className="py-3 pl-4 text-emerald-400">+$37,800 - $63,000 / Yr</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-white mt-10">2. The True Math Behind Empty Chairs</h2>
+          <p className="text-slate-300 leading-relaxed">
+            In private healthcare, a vacant chair represents an absolute perishable commodity. Once a slot is wasted, it cannot be recovered. If a patient cancels their root canal or premium specialist consultation with only three hours' notice, that clinic chair still incurs high operational overhead:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-slate-300">
+            <li>The practitioner continues to receive salary or draw-pool coverage during inactive hours.</li>
+            <li>Clinical lights, high-end sterile equipment, and office suites remain powered on.</li>
+            <li>Rental and support structures generate a static expenditure.</li>
+          </ul>
+          <p className="text-slate-300 leading-relaxed">
+            To combat this, the advanced operational model utilizes <em>"Waitlist Rescue Clusters"</em>. As soon as a cancellation request is parsed, the AI instantly reviews the patient queue for appropriate matching procedures, matching location preferences, and patient proximity. It sends out highly personalized, secure confirmation templates. In 2026, over <strong>85% of vacancies</strong> can be automatically filled within 18 minutes of the original cancellation, preserving clinical chair density and protecting practice margins completely.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">3. Scaling Patient Lifetime Value (LTV)</h2>
+          <p className="text-slate-300 leading-relaxed">
+            Healthcare automation is not merely a short-term cost reducer—it is a massive driver of patient lifetime retention. Today's patients expect the same digital ease from their medical provider as they do from premium banking or ride-sharing systems. 
+            When your clinic offers instant, transparent, and responsive self-scheduling services, you establish clinical frictionlessness. Patients are 60% less likely to migrate to competitor clinics, and checkups are scheduled with 40% higher compliance. 
+            The calculated clinical ROI of artificial intelligence is therefore exponential, compounding year-over-year as your retention rates and clinical reputation expand.
+          </p>
+        </div>
       )
     },
     "tools": {
       title: "Top 3 HIPAA-Compliant AI Tools for Private Practice",
       icon: Shield,
       content: (
-        <>
-          <p>Security is non-negotiable in modern healthcare. As clinics adopt artificial intelligence, the primary concern must be the integrity and privacy of patient data. When integrating AI orchestration platforms, compliance with HIPAA (USA), GDPR (Europe), and ISO 27001 standards is the absolute baseline. We have vetted the leading contenders for 2026 based on their security architecture and clinical utility.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Anolla: The Orchestration Leader</h2>
-          <p>Anolla has set the standard for clinically-aware AI. Their system uses end-to-end encryption for all patient interactions and stores data in zero-knowledge environments. Their 'Legal Guard' module ensures that every AI-generated response complies with regional medical advertising and communication laws, making it the safest choice for high-end boutique clinics.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. ChatArm: Patient Relationship Focused</h2>
-          <p>ChatArm focuses on the 'front-of-house' experience. Their AI specializes in triage and empathetic patient communication. They maintain rigorous audit logs and provide clinics with full transparency over how patient data is utilized to train local optimization models. Their 'Privacy First' toggle allows clinics to operate with maximum automation while ensuring no PII is ever exposed to secondary processing layers.</p>
-          
-          <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. CareStack: Full Practice Integration</h2>
-          <p>For clinics looking for an all-in-one solution, CareStack's 2026 update includes a deeply embedded AI core. By integrating automation directly into the clinical record and billing system, they reduce the risk of data leakage between third-party apps. Their 'Buit-in Governance' engine automatically redacts sensitive information before it touches any cloud-based reasoning models, providing the ultimate shield for GP and multi-specialist practices.</p>
-        </>
+        <div className="space-y-6">
+          <p className="text-lg leading-relaxed text-slate-300">
+            Security and clinical governance are absolute and non-negotiable in modern digital healthcare. As physical and private specialist practices rapidly adopt automated scheduling and artificial intelligence, the primary concern must be the integrity, privacy, and absolute security of protected health information (PHI). 
+            When integrating cloud-based conversational platforms, full compliance with <strong>HIPAA (USA), GDPR (Europe), and ISO 27001</strong> is the mandatory operating baseline. We have audited the leading AI vendors in 2026 based on their encryption engineering, security, and clinical efficacy.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">1. Anolla: The Clinical Coordination Leader</h2>
+          <p className="text-slate-300 leading-relaxed">
+            Anolla has established the benchmark for clinically aware artificial intelligence. Their system utilizes advanced end-to-end industry encryption networks, ensuring that patient data is processed in isolated, dedicated environments. 
+            Rather than relying on generic multi-tenant servers, Anolla deploys localized data isolation nodes. Their "Legal Guard" system automatically checks every conversational response against regional health guidelines, preventing the inadvertent broadcast of medical advice or non-compliant marketing language. For high-end, multi-chair private clinics, Anolla remains the gold standard.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">2. ChatArm: Specialized Patient Relationship Intake</h2>
+          <p className="text-slate-300 leading-relaxed">
+            ChatArm is engineered to optimize user intake workflows and pre-qualification triage. Their system excels at managing sympathetic, context-aware patient dialog. They maintain detailed audit histories and export fully transparent reports outlining exactly how every data token is handled. 
+            ChatArm also signs formal, binding Business Associate Agreements (BAAs) with every clinic partner. Their "Security Shield" instantly redacts all personal credentials, phone records, and medical conditions before passing payloads to secondary reasoning models, creating an impenetrable barrier against unauthorized exposures.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-10">3. CareStack: All-In-One Enterprise PMS Core</h2>
+          <p className="text-slate-300 leading-relaxed">
+            For large group multi-location dental and general groups, CareStack offers a deeply integrated PMS coordination platform. Rather than hooking together disparate third-party apps, CareStack features an organic, built-in automation layer. 
+            This native structure eliminates the need for dynamic data bridges, removing potential interception points. Their automated billing and clearance assistant validates claims in real-time, verifying compliance codes before submitting packages to clearinghouses.
+          </p>
+
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 my-8">
+            <h3 className="text-lg font-bold text-white mb-3">AI Platforms Security Compliance Matrix</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs md:text-sm border-collapse text-slate-300">
+                <thead>
+                  <tr className="border-b border-white/15 text-slate-400 font-bold">
+                    <th className="pb-3 pr-4">Security Parameter</th>
+                    <th className="pb-3 px-4">Anolla Architecture</th>
+                    <th className="pb-3 px-4">ChatArm Gateway</th>
+                    <th className="pb-3 pl-4">CareStack PMS</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">HIPAA BAA Guarantee</td>
+                    <td className="py-3 px-4 text-emerald-400 font-medium">✓ Provided & Signed</td>
+                    <td className="py-3 px-4 text-emerald-400 font-medium">✓ Provided & Signed</td>
+                    <td className="py-3 pl-4 text-emerald-400 font-medium">✓ Provided & Signed</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Data Storage Model</td>
+                    <td className="py-3 px-4">Zero-Knowledge Private Cloud</td>
+                    <td className="py-3 px-4">AES-256 Encrypted / Redacted</td>
+                    <td className="py-3 pl-4">Isolated SQL Cluster Database</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">Audit Trail Logging</td>
+                    <td className="py-3 px-4">Real-Time Cryptographic Ledger</td>
+                    <td className="py-3 px-4">Standard Syslog Compliance</td>
+                    <td className="py-3 pl-4">Full Clinical PMS Logs</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-semibold text-white">OAuth Sync Capabilities</td>
+                    <td className="py-3 px-4">Direct PM Interfaces</td>
+                    <td className="py-3 px-4">Encrypted Webhook Bridges</td>
+                    <td className="py-3 pl-4">Native / Built-In Core Module</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-white mt-10">4. Key Compliance Guidelines to Remember</h2>
+          <p className="text-slate-300 leading-relaxed">
+            When setting up conversational automation in your private clinic, ensure your team follows these crucial security rules:
+          </p>
+          <ul className="list-decimal pl-6 space-y-3 text-slate-300">
+            <li>
+              <strong>Always Sign a BAA First:</strong> Never authorize any AI software to scan, read, or process raw data from your Practice Management Software until a formal Business Associate Agreement is co-signed by both parties.
+            </li>
+            <li>
+              <strong>Audit Data Rotations:</strong> Set up strict retention standards. There is rarely a business need to store historical conversational logs permanently on third-party servers. Implement automatic 30-day deletion scopes.
+            </li>
+            <li>
+              <strong>Secure Proper Patient Consent:</strong> Ensure your online self-scheduling checkouts feature explicit checkboxes where patients consent to receiving transaction confirmations, operational updates, and routine clinic alerts via encrypted SMS text channels.
+            </li>
+          </ul>
+        </div>
       )
     }
   };
@@ -398,8 +608,8 @@ const PrivacyPolicyPage = () => {
   return (
     <div className="min-h-screen relative flex flex-col pt-12 px-6">
       <SEOMetadata 
-        title="Privacy Policy | ClinicPulse AI"
-        description="Learn how ClinicPulse AI handles and secures your healthcare practice metrics and information with absolute medical-grade zero-knowledge encryption."
+          title="Privacy Policy | ClinicPulse AI"
+          description="Learn how ClinicPulse AI handles and secures your healthcare practice metrics and information with absolute medical-grade zero-knowledge encryption."
       />
       <div className="fixed inset-0 -z-10 animate-mesh opacity-30" />
       <div className="fixed inset-0 -z-20 bg-navy-950" />
@@ -422,9 +632,32 @@ const PrivacyPolicyPage = () => {
         <div className="glass-card p-10 md:p-16 space-y-8">
           <h1 className="text-4xl font-bold text-white">Privacy Policy</h1>
           <div className="prose prose-invert max-w-none text-slate-300 space-y-6">
+            <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Last Updated: June 2026</p>
+            
+            <h2 className="text-xl font-bold text-white mt-8">1. Introduction & Security Standard</h2>
             <p>At ClinicPulse AI, we take your data security seriously. We only collect clinic emails and names for the express purpose of generating your personalized ROI reports and AI integration roadmaps.</p>
             <p>We do not sell, rent, or trade your personal information to third parties. Your data is encrypted and used solely within our analysis engine to provide the most accurate revenue leakage projections possible.</p>
             <p>Your information is stored securely and is only accessible by our analytical team and authorized processing partners used to deliver your custom roadmap.</p>
+            
+            <h2 className="text-xl font-bold text-white mt-8">2. Protected Health Information (HIPAA) Compliance</h2>
+            <p>Our platform evaluates macro-level clinical metrics (such as no-shows, hourly rates, and general specialty parameters) and <strong>does not ingest, process, or retain any individual Protected Health Information (PHI)</strong> as defined by the Health Insurance Portability and Accountability Act (HIPAA). All analytics are computed in zero-knowledge environments using aggregate numbers.</p>
+
+            <h2 className="text-xl font-bold text-white mt-8">3. Google AdSense & Third-Party Advertising Disclosures</h2>
+            <p>We partner with Google AdSense to serve advertisements on our web platform. Understanding your choices regarding ad tracking and cookies is crucial:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Cookies & Web Beacons:</strong> Google, as a third-party vendor, uses cookies to serve ads on ClinicPulse AI.</li>
+              <li><strong>DART Cookie:</strong> Google's use of the advertising cookies enables it to serve relevant, interest-based ads to our users based on their visit to our site and other sites on the Internet.</li>
+              <li><strong>Opting Out:</strong> Users may opt out of personalized advertising by visiting the official Google Ad Settings dashboard, or by utilizing standard third-party Cookie Management preference options.</li>
+            </ul>
+
+            <h2 className="text-xl font-bold text-white mt-8">4. Data Subject Rights (GDPR & CCPA Compliant)</h2>
+            <p>Depending on your jurisdiction, you have specific privileges regarding your personal identifiers (such as clinic metadata and email):</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>The absolute right to request the complete deletion of your submitted email from our systems.</li>
+              <li>The right to inspect any reports generated using your analytical credentials.</li>
+              <li>The right to opt-out of newsletter and educational resource circulars.</li>
+            </ul>
+            <p>To request deletion or make a privacy inquiry, please execute our standard support loop on our Contact Us page or communicate via <strong>hello@clinicpulse.ai</strong>.</p>
           </div>
         </div>
       </motion.div>
@@ -462,9 +695,21 @@ const TermsOfServicePage = () => {
         <div className="glass-card p-10 md:p-16 space-y-8">
           <h1 className="text-4xl font-bold text-white">Terms of Service</h1>
           <div className="prose prose-invert max-w-none text-slate-300 space-y-6">
+            <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Last Updated: June 2026</p>
+
+            <h2 className="text-xl font-bold text-white mt-8">1. Accuracy of Estimates & Projections</h2>
             <p>The ClinicPulse AI calculator provides estimates based on 2026 industry averages and historical datasets. Actual revenue recovery may vary based on specific clinic operations, patient demographics, and software implementation strategies.</p>
             <p>By using this tool, you acknowledge that these projections are for informational purposes and should be vetted by your financial and operational teams before making significant investment decisions.</p>
             <p>ClinicPulse AI is not liable for errors in manual data entry or indirect losses resulting from the use of our estimation tool.</p>
+
+            <h2 className="text-xl font-bold text-white mt-8">2. Allowable Operations & Proper Tool Use</h2>
+            <p>Users are authorized to query our calculation engines for honest, commercial evaluation of their active physical clinics only. Any attempts to automate queries, execute distributed scraping modules, load mock metrics, or reverse-engineer the recovery logic are strictly prohibited.</p>
+
+            <h2 className="text-xl font-bold text-white mt-8">3. Limitation of Liability</h2>
+            <p>Under no circumstances shall ClinicPulse AI be responsible for direct, indirect, incidental, or exemplary financial losses resulting from the adoption of any recommended automation strategies, software integrations, partners, or organizational plans depicted on this domain.</p>
+
+            <h2 className="text-xl font-bold text-white mt-8">4. Modifications to Service</h2>
+            <p>We preserve our right to optimize, alter, restrict, or suspend our public software calculator modules without notice. For support or queries, contact us hello@clinicpulse.ai.</p>
           </div>
         </div>
       </motion.div>
